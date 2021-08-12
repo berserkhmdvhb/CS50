@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+        // TODO: Add code to check answers to questions
+        	//let blocks = document.querySelector("form")
+        	function changeColorEvent(event)
+        	{
+        	    var block= event.srcElement;
+        	    //console.log(block);
+        	    if (block.innerHTML == "Vladimir")
+            	    {
+    		            block.style.backgroundColor = "green";
+    		            block.parentNode.innerHTML += "<br/> Correct!";
+    		            //document.querySelector("h3").innerHTML += "Correct!";
+            	    }
+            	    else
+            	    {
+            	        block.style.backgroundColor = "red";
+            	        block.parentNode.innerHTML += "<br/> Wrong!";
+            	    }
+        	}
+        	function sumbitcolor()
+        	{
+        	    field = document.getElementById('name');
+        	    if (document.querySelector('#name').value.toLowerCase() == "mona")
+        	    {
+        	        field.style.backgroundColor= 'green';
+        	        field.parentNode.innerHTML += "<br/> Correct!";
+        	    }
+        	    else
+        	    {
+        	        field.style.backgroundColor= 'red';
+        	        field.parentNode.innerHTML += "<br/> Wrong!";
+        	    }
+
+        	}
+
+
+        	//document.getElementById('colorDiv').style.backgroundColor = triggerObject.innerHTML.toLowerCase();
+
+
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3> Who is Max Payne's closet friend?</h3>
+                <!-- TODO: Add multiple choice question here -->
+                <button id="block" onclick="changeColorEvent(event);">Winterson</button>
+                <button id="block" onclick="changeColorEvent(event);">Alex</button>
+                <button id="block" onclick="changeColorEvent(event);">Vladimir</button>
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+
+                <!-- TODO: Add free response question here -->
+                <h3> Who is the love of Max Payne?</h3>
+                <form onsubmit="sumbitcolor(); return false;">
+                    <input autocomplete="off" autofocus id="name" placeholder="Name" type="text">
+                    <input type="submit"value="Check Answer" >
+                </form>
+
+            </div>
+        </div>
+    </body>
+</html>
